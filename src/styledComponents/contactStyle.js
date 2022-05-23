@@ -48,6 +48,7 @@ export const ContactForm = styled.form`
 `
 export const InputWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 1.2rem;
 `
