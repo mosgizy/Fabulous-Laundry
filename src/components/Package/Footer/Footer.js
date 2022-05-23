@@ -29,7 +29,7 @@ const Footer = () => {
       <SectionWrapper>
         <Footerwrapper>
           <FooterContent>
-            <Img src={laundry} />
+            <Img src={laundry} loading='lazy'/>
             <Paragraph spacing header>
               Suspendisse varius enim in eros elementum tristique. Duis cursus,
               mi quis viverra ornare, eros dolor interdum nulla.

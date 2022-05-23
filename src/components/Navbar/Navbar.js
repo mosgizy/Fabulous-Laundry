@@ -31,7 +31,7 @@ const Navbar = () => {
     <Header>
         <NavBar>
             <Logo>
-                <Icon src={laundry} alt="icon"/>
+                <Icon src={laundry} alt="icon" loading='lazy'/>
                 <NavMenu display={toggle}>
                   <StyledFontAwesome close icon={faXmark} onClick={() => hideMenu()} />
                   <Unorder>

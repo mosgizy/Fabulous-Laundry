@@ -24,7 +24,7 @@ const Process = () => {
         </HeaderOne>
         <ProcessWrapper>
           <ProcessItem>
-            <Img src={icon1} />
+            <Img src={icon1} loading='lazy' />
             <HeaderTwo margin>We Collect Your Clothes</HeaderTwo>
             <Paragraph spacing>
               The automated process starts as soon as your clothes go into the
@@ -32,7 +32,7 @@ const Process = () => {
             </Paragraph>
           </ProcessItem>
           <ProcessItem>
-            <Img src={icon2} />
+            <Img src={icon2} loading='lazy' />
             <HeaderTwo margin>Wash Your Clothes</HeaderTwo>
             <Paragraph spacing>
               The automated process starts as soon as your clothes go into the
@@ -40,7 +40,7 @@ const Process = () => {
             </Paragraph>
           </ProcessItem>
           <ProcessItem>
-            <Img src={icon3} />
+            <Img src={icon3} loading='lazy'/>
             <HeaderTwo margin>Get Dilivery</HeaderTwo>
             <Paragraph spacing>
               The automated process starts as soon as your clothes go into the
