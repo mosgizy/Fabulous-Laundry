@@ -27,6 +27,11 @@ const Navbar = () => {
     setToggle("")
   }
 
+  const handleNav = (id) => {
+    ScrollTo(id)
+    setToggle("")
+  }
+
   return (
     <Header>
         <NavBar>
@@ -35,10 +40,10 @@ const Navbar = () => {
                 <NavMenu display={toggle}>
                   <StyledFontAwesome close icon={faXmark} onClick={() => hideMenu()} />
                   <Unorder>
-                    <List onClick={() => ScrollTo("home")}><Link>home</Link></List>
-                    <List onClick={() => ScrollTo("about")}><Link>about</Link></List>
-                    <List onClick={() => ScrollTo("services")}><Link>services</Link></List>
-                    <List onClick={() => ScrollTo("contact")}><Link>contact</Link></List>
+                    <List onClick={() => handleNav("home")}><Link>home</Link></List>
+                    <List onClick={() => handleNav("about")}><Link>about</Link></List>
+                    <List onClick={() => handleNav("services")}><Link>services</Link></List>
+                    <List onClick={() => handleNav("contact")}><Link>contact</Link></List>
                   </Unorder>
                 </NavMenu>
             </Logo>
