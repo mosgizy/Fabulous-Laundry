@@ -1,7 +1,7 @@
 import React from 'react'
 import { Section,Button } from '../../styledComponents/GlobalStyle'
 import { HeroWrapper,HeroContent,HeroHeader,HeaderSub,ContentWrapper } from '../../styledComponents/heroStyle'
-import ScrollTo from '../../scrollHook'
+import ScrollTo from '../../scrollFunction'
 
 const Hero = () => {
   return (

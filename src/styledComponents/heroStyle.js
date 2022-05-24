@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import herobg from '../assets/hero_bg.webp'
 import herobg2 from '../assets/hero_bg5.jpeg'
 

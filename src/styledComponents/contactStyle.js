@@ -11,10 +11,6 @@ export const ContactWrapper = styled.div`
     @media screen  and (min-width:768px){
         flex-direction: row;
     }
-
-    @media screen  and (min-width:989px){
-        padding-inline-end: 3rem;
-    }
 `
 
 export const ContactInfo = styled.div`

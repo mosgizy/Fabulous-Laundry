@@ -8,6 +8,7 @@ export const PackageWrapper = styled.div`
     
     @media screen and (min-width:768px){
         flex-direction: row;
+        justify-content: space-between;
     }
 `
 
@@ -16,7 +17,7 @@ export const PackageInfo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem;
+    padding: 3rem 3.5rem;
     position: relative;
     transition: box-shadow var(--transition);
 
@@ -47,6 +48,7 @@ export const Price = styled.div`
 export const Sup = styled.sup`
     font-weight: 400;
     font-size: 1.2rem;
+    vertical-align: super;
 `
 
 export const Sub = styled.sub`
@@ -56,7 +58,8 @@ export const Sub = styled.sub`
 `
 
 export const Span = styled.span`
-
+    font-size:3rem;
+    letter-spacing: 2.5px;
 `
 
 export const ListWrapper = styled.ul`

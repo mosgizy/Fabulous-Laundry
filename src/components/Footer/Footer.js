@@ -5,7 +5,7 @@ import {
   Paragraph,
   HeaderTwo,
   Link,
-} from "../../../styledComponents/GlobalStyle";
+} from "../../styledComponents/GlobalStyle";
 import {
   Foot,
   FooterContent,
@@ -13,10 +13,10 @@ import {
   Footerwrapper,
   FontIcon,
   Copyright,
-} from "../../../styledComponents/footerStyle";
-import { StyledFontAwesome } from "../../../styledComponents/navStyle";
-import { ListWrapper, List } from "../../../styledComponents/packageStyle";
-import laundry from "../../../assets/laundry-icon.png";
+} from "../../styledComponents/footerStyle";
+import { StyledFontAwesome } from "../../styledComponents/navStyle";
+import { ListWrapper, List } from "../../styledComponents/packageStyle";
+import laundry from "../../assets/laundry-icon.png";
 import {
   faTwitter,
   faFacebook,

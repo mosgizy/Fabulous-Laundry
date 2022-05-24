@@ -13,7 +13,7 @@ List } from '../../styledComponents/navStyle'
 import { Link } from '../../styledComponents/GlobalStyle'
 import laundry from '../../assets/laundry-icon.png'
 import { faHamburger,faPhone,faXmark } from '@fortawesome/free-solid-svg-icons'
-import ScrollTo from '../../scrollHook'
+import ScrollTo from '../../scrollFunction'
 
 
 const Navbar = () => {

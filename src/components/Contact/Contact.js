@@ -1,4 +1,5 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import {
   Section,
   SectionWrapper,
@@ -16,31 +17,65 @@ import {
   InputWrapper,
   Input,
   Message,
-  Arrow
+  Arrow,
 } from "../../styledComponents/contactStyle";
 import { StyledFontAwesome } from "../../styledComponents/navStyle";
 import {
   faEnvelope,
   faPhone,
   faLocationDot,
-  faArrowTurnUp
+  faArrowTurnUp,
 } from "@fortawesome/free-solid-svg-icons";
+import ScrollTo from '../../scrollFunction'
 
 const Contact = () => {
-    const [show,setShow] = useState("")
+  const form = useRef(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState(false);
 
-    window.addEventListener("scroll",() => {
-        if(window.pageYOffset > 700){
-            setShow("show")
-        }else{
-            setShow("")
+  const [show, setShow] = useState("");
+
+  window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 700) {
+      setShow("show");
+    } else {
+      setShow("");
+    }
+    console.log(window.pageYOffset > 700);
+  });
+
+  const api_key = ""
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm("Fabulous", "fabulous", form.current, api_key.emailjs)
+      .then(
+        (result) => {
+          if (result.text === "OK") {
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+            setError(true);
+          }
+        },
+        (error) => {
+          // console.log(error.text);
+          setError(false);
         }
-        console.log(window.pageYOffset > 700)
-    })
+      );
+  };
 
-    useEffect(() => {
-        
-    })
+  useEffect(() => {
+    setTimeout(() => {
+      setError(false);
+    }, 1000);
+  }, [error]);
+
   return (
     <Section id="contact">
       <SectionWrapper>
@@ -63,9 +98,7 @@ const Contact = () => {
               <StyledFontAwesome icon={faPhone} />
               <ParaWrapper>
                 <Paragraph>Call Us</Paragraph>
-                <Paragraph>
-                  (+234) 817 880 1432
-                </Paragraph>
+                <Paragraph>(+234) 817 880 1432</Paragraph>
               </ParaWrapper>
             </InfoWrapper>
             <InfoWrapper>
@@ -78,22 +111,46 @@ const Contact = () => {
               </ParaWrapper>
             </InfoWrapper>
           </ContactInfo>
-          <ContactForm>
+          <ContactForm ref={form} onSubmit={sendEmail}>
+            <Paragraph error>{error && "message successfully sent"}</Paragraph>
             <InputWrapper>
-                <Input type="text" placeholder="Name" />
-                <Input type="email" placeholder="Email" />
+              <Input
+                type="text"
+                name="user_name"
+                id="name"
+                value={name}
+                placeholder="Name"
+              />
+              <Input
+                type="email"
+                name="user_email"
+                id="email"
+                value={email}
+                placeholder="Email"
+              />
             </InputWrapper>
-                <Input type="text" placeholder="Subject" />
+            <Input
+              type="text"
+              name="user_subject"
+              id="subject"
+              value={subject}
+              placeholder="Subject"
+            />
             <InputWrapper>
-            <Message placeholder="Message"></Message>
+              <Message
+                name="message"
+                id="message"
+                value={message}
+                placeholder="Message"
+              ></Message>
             </InputWrapper>
             <InputWrapper>
-                <Button>Send Message</Button>
+              <Button type="submit">Send Message</Button>
             </InputWrapper>
           </ContactForm>
         </ContactWrapper>
-        <Arrow href="#home" show={show}>
-            <StyledFontAwesome icon={faArrowTurnUp} />
+        <Arrow onClick={() => ScrollTo("home")} show={show}>
+          <StyledFontAwesome icon={faArrowTurnUp} />
         </Arrow>
       </SectionWrapper>
     </Section>
