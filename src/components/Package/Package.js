@@ -43,7 +43,7 @@ const Package = () => {
               </ListWrapper>
               <Button>CHOOSE PLAN</Button>
           </PackageInfo>
-          <PackageInfo>
+          <PackageInfo active>
               <Price>
                   <HeaderOne><Sup>$</Sup><Span>29</Span><Sub>/month</Sub></HeaderOne>
               </Price>
