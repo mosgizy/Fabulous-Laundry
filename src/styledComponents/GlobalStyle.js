@@ -152,6 +152,10 @@ export const Button = styled.button`
     transition: all var(--transition);
   }
 
+  :hover{
+    box-shadow:0 0 10px rgba(0,0,0,.3)
+  }
+
   :hover::before {
     background-color: red;
     left: 100%;
