@@ -44,15 +44,14 @@ const Contact = () => {
     } else {
       setShow("");
     }
-    console.log(window.pageYOffset > 700);
   });
 
-  const api_key = ""
-
+  const api_key = process.env.REACT_APP_API_KEY
+  
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm("Fabulous", "fabulous", form.current, api_key.emailjs)
+      .sendForm("fabulous", "hasterisk", form.current, api_key)
       .then(
         (result) => {
           if (result.text === "OK") {
@@ -64,7 +63,7 @@ const Contact = () => {
           }
         },
         (error) => {
-          // console.log(error.text);
+          console.log(error.text);
           setError(false);
         }
       );
@@ -119,6 +118,7 @@ const Contact = () => {
                 name="user_name"
                 id="name"
                 value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Name"
               />
               <Input
@@ -126,6 +126,7 @@ const Contact = () => {
                 name="user_email"
                 id="email"
                 value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
               />
             </InputWrapper>
@@ -134,6 +135,7 @@ const Contact = () => {
               name="user_subject"
               id="subject"
               value={subject}
+              onChange={(e) => setSubject(e.target.value)}
               placeholder="Subject"
             />
             <InputWrapper>
@@ -141,6 +143,7 @@ const Contact = () => {
                 name="message"
                 id="message"
                 value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 placeholder="Message"
               ></Message>
             </InputWrapper>
