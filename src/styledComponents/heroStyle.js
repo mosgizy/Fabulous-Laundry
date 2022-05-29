@@ -3,7 +3,7 @@ import herobg from '../assets/hero_bg.webp'
 import herobg2 from '../assets/hero_bg5.jpeg'
 
 export const HeroWrapper = styled.div`
-    background-image: url(${herobg2});
+    background-image: url("https://res.cloudinary.com/hasterisk/image/upload/v1653865185/hero_bg5_hufbex.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -21,7 +21,7 @@ export const HeroWrapper = styled.div`
     }
     
     @media screen and (min-width:768px){
-        background-image: url(${herobg});
+        background-image: url("https://res.cloudinary.com/hasterisk/image/upload/v1653865378/hero_bg_mpxcnc.webp");
         min-height: 80vh;
     }
 `
